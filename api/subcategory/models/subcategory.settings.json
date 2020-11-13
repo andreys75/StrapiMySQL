@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subcategories",
+  "info": {
+    "name": "subcategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "category": {
+      "model": "category",
+      "via": "subcategories"
+    },
+    "trainings": {
+      "via": "subcategory",
+      "collection": "training"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "searchterms",
+  "info": {
+    "name": "searchterm"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "searchTerm": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainings",
+  "info": {
+    "name": "training"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "listing_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "article": {
+      "via": "training",
+      "model": "articles"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "subcategory": {
+      "model": "subcategory",
+      "via": "trainings"
+    },
+    "subtext": {
+      "type": "string"
+    }
+  }
+}

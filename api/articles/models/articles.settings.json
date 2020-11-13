@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "articles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "is_advance": {
+      "type": "boolean"
+    },
+    "listing_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "parent": {
+      "model": "articles",
+      "via": "articles"
+    },
+    "articles": {
+      "collection": "articles",
+      "via": "parent"
+    },
+    "description": {
+      "type": "text"
+    },
+    "display_sidepanel": {
+      "type": "boolean"
+    },
+    "training": {
+      "model": "training",
+      "via": "article"
+    },
+    "tabledata": {
+      "type": "json"
+    }
+  }
+}
